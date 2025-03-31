@@ -426,3 +426,27 @@
       }, 0)
   }());
     
+  const track = document.getElementById('track');
+const playPauseBtn = document.getElementById('play-pause');
+const progress = document.getElementById('progress');
+
+playPauseBtn.addEventListener('click', () => {
+  if (track.paused) {
+    track.play();
+    playPauseBtn.textContent = 'Pausa';
+  } else {
+    track.pause();
+    playPauseBtn.textContent = 'Reproducir';
+  }
+});
+
+track.addEventListener('timeupdate', () => {
+  const percent = (track.currentTime / track.duration) * 100;
+  progress.value = percent;
+});
+
+progress.addEventListener('input', () => {
+  track.currentTime = (progress.value / 100) * track.duration;
+});
+
+    

@@ -3390,3 +3390,14 @@ button.next:hover {
     }
 
 }
+
+.audio-player {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column-reverse;
+  }
+  #progress {
+    width: 200px;
+  }
+  
